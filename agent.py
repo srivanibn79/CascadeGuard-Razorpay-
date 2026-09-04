@@ -92,7 +92,7 @@ async def main():
                 f"If routed successfully (i.e. router returns a healthy gateway), use record_recovery to record the {amt}."
             )
             print(f"Processing TX: {tx_id}")
-            response = agent.chat(prompt)
+            response = await agent.chat(prompt)
             async for chunk in response:
                 pass
             print(f"TX {tx_id} processed.")
