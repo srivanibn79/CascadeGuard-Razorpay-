@@ -43,6 +43,20 @@ CascadeGuard utilizes a streamlined pipeline for intelligent payment routing:
 +-------------------------------------------------------------+
 ```
 
+## Repository Structure & File Usage
+
+| File Name | Purpose |
+| :--- | :--- |
+| `data_generator.py` | Generates 100 synthetic transaction failures (latency, error codes, amounts) for testing. |
+| `classifier.py` | PyTorch neural network that classifies failures as recoverable soft declines (1) or hard faults (0). |
+| `router.py` | Implements BFS pathfinding across a simulated gateway graph to find healthy routing detours. |
+| `agent.py` | The main orchestration layer. Chains tools together and enforces retry limits and audit hooks. |
+| `verify_modules.py` | End-to-end mathematical verification harness proving 100% accuracy and bounding logic. |
+| `antigravity_shim.py` | Local compatibility wrapper mimicking the Antigravity SDK to allow local execution of hooks. |
+| `audit_log.json` | Persistent receipt of all successfully recovered transactions and their hop counts. |
+| `escalation_queue.json` | Persistent log of hard faults and failed retries flagged for human compliance review. |
+| `requirements.txt` | Defines standard Python dependencies required to run the pipeline. |
+
 ## Verified Test Run & Reproducibility
 
 To ensure identical recovery metrics across all environments, all random operations and PyTorch initializations are locked with `seed(42)`. The PyTorch classifier achieved **100.00% Training Accuracy** on the synthetic dataset.
