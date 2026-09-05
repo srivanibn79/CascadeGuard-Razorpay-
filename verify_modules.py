@@ -9,8 +9,7 @@ from classifier import train_model, predict
 from router import route_transaction
 
 def run_verification():
-    torch.manual_seed(42)
-    random.seed(42)
+  
     
     print("--- 1. Generating Synthetic Dataset ---")
     generate_data()
