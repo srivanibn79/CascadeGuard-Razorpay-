@@ -60,7 +60,9 @@ CascadeGuard utilizes a streamlined pipeline for intelligent payment routing:
 ## Verified Test Run & Reproducibility
 
 ⚬	Training Accuracy: 97.00%
+
 ⚬	Recovered Revenue: $38,662.73
+
 ⚬	Note: The data generator builds fresh synthetic traffic on each run, demonstrating dynamic, real-time routing capabilities rather than relying on static, hardcoded seeds.
 
 ## Fintech Compliance
